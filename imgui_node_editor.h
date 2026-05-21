@@ -107,6 +107,7 @@ struct Config
     int                     ContextMenuButtonIndex; // Mouse button index context menu action will react to (0-left, 1-right, 2-middle)
     bool                    EnableSmoothZoom;
     float                   SmoothZoomPower;
+    bool                    EnableDrag;
 
     Config()
         : SettingsFile("NodeEditor.json")
@@ -129,6 +130,7 @@ struct Config
 # else
         , SmoothZoomPower(1.3f)
 # endif
+        , EnableDrag(true)
     {
     }
 };

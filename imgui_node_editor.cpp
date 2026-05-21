@@ -3263,6 +3263,9 @@ ed::EditorAction::AcceptResult ed::NavigateAction::Accept(const Control &control
     if (m_IsActive)
         return False;
 
+    if (!Editor->GetConfig().EnableDrag)
+        return False;
+
     if (Editor->CanAcceptUserInput() /*&& !ImGui::IsAnyItemActive()*/ && ImGui::IsMouseDragging(Editor->GetConfig().NavigateButtonIndex, 0.0f))
     {
         m_IsActive = true;
